@@ -7,4 +7,5 @@ halt:
 	@cmd /k "env\Scripts\deactivate.bat"
 
 test:
-	python quick_kth_test.py
+
+	python seesaw_median_test.py

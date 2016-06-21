@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from functools import reduce
+import sys
+sys.setrecursionlimit(1000000)
 
 
 """
@@ -57,10 +59,7 @@ def quick_kth(list1, kth):
 
 
 def find_min_and_max(list1):
-
-    f = lambda t, x: \
-        (x, t[1]) if t[0] > x else \
-        (t[0], x) if x > t[1] else t
+    f = lambda t, x: (x if x < t[0] else t[0], x if x > t[1] else t[1])
     return reduce(f, list1, (99999999999999, -999999999999))
 
 
