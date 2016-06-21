@@ -29,44 +29,45 @@ def seesaw_median(list1):
 """
 Seesaw Strategy Median Finding Algorithm: with Incremental Technique
 """
-def seesaw_median_incre(small, median, median1, big, list1):
+def seesaw_median_incre(smallD, medianD, median1D, bigD, list1O):
 
-    if list1 == []:
-        return small, median, median1, big
+    small, median, median1, big, list1 = smallD, medianD, median1D, bigD, list1O
 
-    head = list1[0]
-    tail = list1[1:]
+    while list1 != []:
 
-    if small == [] and median == None and big == []:
-        return seesaw_median_incre(small, head, median1, big, tail)
+        head = list1[0]
+        tail = list1[1:]
 
-    if small == [] and median1 == None and big == []:
-        median2, median3 = level2(median, head)
-        return seesaw_median_incre(small, median2, median3, big, tail)
-
-    if len(small) == len(big) and median != None and median1 != None:
-        s, median, b = level(median, median1, head)
-        small.append(s)
-        big.append(b)
-        return seesaw_median_incre(small, median, None, big, tail)
-
-    if len(small) == len(big) and median != None and median1 == None:
-       if head == median:
-           return seesaw_median_incre(small, median, head, big, tail)
-       if head < median:
-           max_s = find_max(small)
-           small.remove(max_s)
-           s, median1, median2 = level(max_s, head, median)
-           small.append(s)
-           return seesaw_median_incre(small, median1, median2, big, tail)
-       if median < head:
-           min_b = find_min(big)
-           big.remove(min_b)
-           median1, median2, b = level(median, min_b, head)
-           big.append(b)
-           return seesaw_median_incre(small, median1, median2, big, tail)
+        if small == [] and median == None and big == []:
+            small, median, median1, big, list1 = small, head, median1, big, tail
         
-    return None # Problem occurs here.
+        elif small == [] and median1 == None and big == []:
+            median2, median3 = level2(median, head)
+            small, median, median1, big, list1 = small, median2, median3, big, tail
+
+        elif len(small) == len(big) and median != None and median1 != None:
+            s, median, b = level(median, median1, head)
+            small.append(s)
+            big.append(b)
+            small, median, median1, big, list1 = small, median, None, big, tail
+
+        elif len(small) == len(big) and median != None and median1 == None:
+            if head == median:
+                small, median, median1, big, list1 = small, median, head, big, tail
+            elif head < median:
+                max_s = find_max(small)
+                small.remove(max_s)
+                s, median1, median2 = level(max_s, head, median)
+                small.append(s)
+                small, median, median1, big, list1 = small, median1, median2, big, tail
+            elif median < head:
+                min_b = find_min(big)
+                big.remove(min_b)
+                median1, median2, b = level(median, min_b, head)
+                big.append(b)
+                small, median, median1, big, list1 = small, median1, median2, big, tail
+
+    return small, median, median1, big
 
 
 
