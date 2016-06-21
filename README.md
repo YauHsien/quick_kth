@@ -15,3 +15,7 @@ Example #1: `quick_kth([1,2,3,4,5], 5, (5+1)//2)` gives `3` as the median.
 
 Example #2: `quick_kth([1,2,3,4,5,6], 6, (6+1)//2)` gives `3, 4` as the median.
 
+### Usage - to Run Unit Test
+Run `make start` and `make test` to get results of unit test, then run `make halt` to exit python environment. The project is developed in Windows, so please make sure you have the `make` command in your system.
+
+Add test cases into the folder `priv\`, one case per file.
