@@ -3,7 +3,7 @@ The old title was deprecated
 
 # Seesaw Strategy Median Finding Algorithm
 
-To find K-th number in a list of numbers.
+To find K-th number in a list of numbers. For the case of finding median, it's specific to find the N-th number in the number sequence with length of either 2N or 2N - 1.
 
 ### Technology
 1. python
