@@ -21,16 +21,21 @@ To find K-th number in a list of numbers.
 
 ### Function Implemented
 
-1. seesaw_median(list1) => small, median, median1, big
+1. `seesaw_median(list1)` => `small, median, median1, big`
 
-1. seesaw_median_incre(small, median, median1, big, list1)
+1. `seesaw_median_incre(small, median, median1, big, list1)` => `small, median, median1, big`
 
 ### Usage - to Run Unit Test
 Run `make start` and `make test` to get results of unit test, then run `make halt` to exit python environment. The project is developed in Windows, so please make sure you have the `make` command in your system.
 
 Add test cases into the folder `priv\test_data`*`.json`, one case per file.
 
+### Screenshot
+
+![screenshot](./rc/unittest.PNG "Result Unit Test")
+
 ### Reference
 The following document was consulted in development stage.
 
 Complexity of Python Operations https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt
+
